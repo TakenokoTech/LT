@@ -1,0 +1,60 @@
+@import './default';
+@import './spinner';
+
+header {
+    // height: 64px;
+    // background-color: #ff99cc;
+}
+
+#contents {
+    padding-top: 64px;
+}
+
+.article {
+    width: 100%;
+    height: 64em;
+    padding: 8px;
+    color: #F6F6F6;
+}
+
+@for $i from 1 through 10 {
+    #article_#{$i} {
+        // background-color: rgb(240*$i/10, 240*$i/10, 240*$i/10);
+        background-color: rgba(30, 30, 30, 0.8);
+        margin-top: 16px;
+        padding-top: 16px;
+        max-height: 640px;
+        transition: all 0.8s ease-in-out;
+    }
+}
+
+#card_container {
+    position: absolute;
+    display: grid;
+    width: 100%;
+    grid-gap: 16px;
+    z-index: 100;
+    grid-template-columns: repeat(auto-fill, 400px);
+    grid-template-rows: auto;
+    justify-content: center;
+    background-color: rgba(100, 100, 100, 0.40);
+    transition: all 0.8s ease-in-out;
+}
+
+#content_container {
+    position: fixed;
+    width: 80%;
+    height: 100%;
+    padding: 0 10%;
+    z-index: 200;
+    background-color: rgba(60, 60, 60, 0.40);
+    transition: all 0.8s ease-in-out;
+}
+
+@for $i from 1 through 10 {
+    #card_#{$i} {
+        // position: absolute;
+        z-index: $i;
+        transition: all 2s ease-in-out;
+    }
+}
